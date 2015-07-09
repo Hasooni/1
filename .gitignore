@@ -1,28 +1,18 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+ #include "Api.h"
+ 
+-#include <boost/property_tree/json_parser.hpp>
+-
+-#include "tgbot/Bot.h"
++#include "tgbot/TgTypeParser.h"
+ #include "tgbot/TgException.h"
++#include "tgbot/net/HttpClient.h"
+ 
+ using namespace std;
+ using namespace boost::property_tree;
+ 
+ namespace TgBot {
+ 
+-Api::Api(Bot* const bot) : _bot(bot) {
++Api::Api(const std::string& token) : _token(token) {
+ }
+ 
